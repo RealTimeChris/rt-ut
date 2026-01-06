@@ -1,0 +1,8 @@
+// MIT License @ /License.md
+// Copyright (c) 2026 Nihilai Collective Corp
+// https://github.com/nihilai-collective/rt-ut
+// include/rt-ut
+
+#pragma once
+
+#include <rt-ut-incl/index.hpp>
