@@ -1,0 +1,269 @@
+﻿{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "windows",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/build/${presetName}",
+      "toolchainFile": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
+      }
+    },
+    {
+      "name": "windows-test-debug",
+      "binaryDir": "${sourceDir}/out/build/windows-test-debug",
+      "inherits": "windows",
+      "cacheVariables": { "RT_UT_TESTING": true }
+    },
+    {
+      "name": "windows-test-release",
+      "binaryDir": "${sourceDir}/out/build/windows-test-release",
+      "inherits": "windows",
+      "cacheVariables": { "RT_UT_TESTING": true }
+    },
+    {
+      "name": "windows-cpu-debug",
+      "binaryDir": "${sourceDir}/out/build/windows-cpu-debug",
+      "inherits": "windows",
+      "cacheVariables": { "RT_UT_TESTING": true }
+    },
+    {
+      "name": "windows-cpu-release",
+      "binaryDir": "${sourceDir}/out/build/windows-cpu-release",
+      "inherits": "windows",
+      "cacheVariables": { "RT_UT_TESTING": true }
+    },
+    {
+      "name": "windows-deploy-cpu-debug",
+      "binaryDir": "${sourceDir}/out/build/windows-deploy-cpu-debug",
+      "inherits": "windows",
+      "cacheVariables": {
+        "RT_UT_CPU": true,
+        "RT_UT_DEPLOY": true
+      }
+    },
+    {
+      "name": "windows-deploy-cpu-release",
+      "binaryDir": "${sourceDir}/out/build/windows-deploy-cpu-release",
+      "inherits": "windows",
+      "cacheVariables": {
+        "RT_UT_CPU": true,
+        "RT_UT_DEPLOY": true
+      }
+    },
+    {
+      "name": "windows-cuda-debug",
+      "binaryDir": "${sourceDir}/out/build/windows-cuda-debug",
+      "inherits": "windows",
+      "cacheVariables": { "RT_UT_CUDA": true }
+    },
+    {
+      "name": "windows-cuda-release",
+      "binaryDir": "${sourceDir}/out/build/windows-cuda-release",
+      "inherits": "windows",
+      "cacheVariables": { "RT_UT_CUDA": true }
+    },
+    {
+      "name": "windows-deploy-cuda-debug",
+      "binaryDir": "${sourceDir}/out/build/windows-deploy-cuda-debug",
+      "inherits": "windows",
+      "cacheVariables": {
+        "RT_UT_CUDA": true,
+        "RT_UT_DEPLOY": true
+      }
+    },
+    {
+      "name": "windows-deploy-cuda-release",
+      "binaryDir": "${sourceDir}/out/build/windows-deploy-cuda-release",
+      "inherits": "windows",
+      "cacheVariables": {
+        "RT_UT_CUDA": true,
+        "RT_UT_DEPLOY": true
+      }
+    },
+    {
+      "hidden": true,
+      "name": "linux",
+      "displayName": "linux (Multi-Config)",
+      "generator": "Ninja Multi-Config",
+      "toolchainFile": "/home/chris/vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "CMAKE_CUDA_HOST_COMPILER": "clang++-19",
+        "CMAKE_CXX_COMPILER": "clang++-19"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "linux-test-debug",
+      "binaryDir": "${sourceDir}/out/build/linux-test-debug",
+      "inherits": "linux",
+      "cacheVariables": { "RT_UT_TEST": true }
+    },
+    {
+      "name": "linux-test-release",
+      "binaryDir": "${sourceDir}/out/build/linux-test-release",
+      "inherits": "linux",
+      "cacheVariables": { "RT_UT_TEST": true }
+    },
+    {
+      "name": "linux-cpu-debug",
+      "binaryDir": "${sourceDir}/out/build/linux-cpu-debug",
+      "inherits": "linux",
+      "cacheVariables": { "RT_UT_CPU": true }
+    },
+    {
+      "name": "linux-cpu-release",
+      "binaryDir": "${sourceDir}/out/build/linux-cpu-release",
+      "inherits": "linux",
+      "cacheVariables": { "RT_UT_CPU": true }
+    },
+    {
+      "name": "linux-deploy-cpu-debug",
+      "binaryDir": "${sourceDir}/out/build/linux-deploy-cpu-debug",
+      "inherits": "linux",
+      "cacheVariables": {
+        "RT_UT_CPU": true,
+        "RT_UT_DEPLOY": true
+      }
+    },
+    {
+      "name": "linux-deploy-cpu-release",
+      "binaryDir": "${sourceDir}/out/build/linux-deploy-cpu-release",
+      "inherits": "linux",
+      "cacheVariables": {
+        "RT_UT_CPU": true,
+        "RT_UT_DEPLOY": true
+      }
+    },
+    {
+      "name": "linux-cuda-debug",
+      "binaryDir": "${sourceDir}/out/build/linux-cuda-debug",
+      "inherits": "linux",
+      "cacheVariables": { "RT_UT_CUDA": true }
+    },
+    {
+      "name": "linux-cuda-release",
+      "binaryDir": "${sourceDir}/out/build/linux-cuda-release",
+      "inherits": "linux",
+      "cacheVariables": { "RT_UT_CUDA": true }
+    },
+    {
+      "name": "linux-deploy-cuda-debug",
+      "binaryDir": "${sourceDir}/out/build/linux-deploy-cuda-debug",
+      "inherits": "linux",
+      "cacheVariables": {
+        "RT_UT_CUDA": true,
+        "RT_UT_DEPLOY": true
+      }
+    },
+    {
+      "name": "linux-deploy-cuda-release",
+      "binaryDir": "${sourceDir}/out/build/linux-deploy-cuda-release",
+      "inherits": "linux",
+      "cacheVariables": {
+        "RT_UT_CUDA": true,
+        "RT_UT_DEPLOY": true
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-cuda-debug",
+      "configurePreset": "windows-cuda-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-cuda-release",
+      "configurePreset": "windows-cuda-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "windows-cpu-debug",
+      "configurePreset": "windows-cpu-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-cpu-release",
+      "configurePreset": "windows-cpu-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "windows-deploy-cuda-debug",
+      "configurePreset": "windows-deploy-cuda-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-deploy-cuda-release",
+      "configurePreset": "windows-deploy-cuda-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "windows-deploy-cpu-debug",
+      "configurePreset": "windows-deploy-cpu-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-deploy-cpu-release",
+      "configurePreset": "windows-deploy-cpu-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "windows-test-debug",
+      "configurePreset": "windows-test-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "linux-cuda-debug",
+      "configurePreset": "linux-cuda-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "linux-cuda-release",
+      "configurePreset": "linux-cuda-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "linux-cpu-debug",
+      "configurePreset": "linux-cpu-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "linux-cpu-release",
+      "configurePreset": "linux-cpu-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "linux-deploy-cuda-debug",
+      "configurePreset": "linux-deploy-cuda-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "linux-deploy-cuda-release",
+      "configurePreset": "linux-deploy-cuda-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "linux-deploy-cpu-debug",
+      "configurePreset": "linux-deploy-cpu-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "linux-deploy-cpu-release",
+      "configurePreset": "linux-deploy-cpu-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "linux-test-debug",
+      "configurePreset": "linux-test-debug",
+      "configuration": "Debug"
+    }
+  ]
+}
